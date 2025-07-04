@@ -19,7 +19,18 @@ export default function Courses() {
               <Route path="/" element={<Navigate to="Home" />} />
               <Route path="Home" element={<Home />} />
               <Route path="Modules" element={<Modules />} />
-              <Route path="Piazza" element={<h2>Piazza</h2>} />
+              <Route
+                path="Piazza"
+                element={
+                  <a
+                    href="https://piazza.com/class/mchnh9kzzbu35p"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <h2>Piazza</h2>
+                  </a>
+                }
+              />
               <Route path="Zoom" element={<h2>Zoom</h2>} />
               <Route path="Assignments" element={<Assignments />} />
               <Route path="Assignments/:aid" element={<AssignmentEditor />} />
