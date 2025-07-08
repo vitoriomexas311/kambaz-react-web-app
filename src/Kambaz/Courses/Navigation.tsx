@@ -1,39 +1,68 @@
-import { Link } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 export default function CourseNavigation() {
+  const { cid } = useParams<{ cid: string }>();
+  const base = `/Kambaz/Courses/${cid}`;
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    isActive ? "fw-bold text-danger" : "text-primary";
+
   return (
-    <div id="wd-courses-navigation">
-      <Link to="/Kambaz/Courses/1234/Home" id="wd-course-home-link">
+    <div id="wd-courses-navigation" className="d-flex flex-column">
+      <NavLink
+        to={`${base}/Home`}
+        className={linkClass}
+        id="wd-course-home-link"
+      >
         Home
-      </Link>
-      <br />
-      <Link to="/Kambaz/Courses/1234/Modules" id="wd-course-modules-link">
+      </NavLink>
+      <NavLink
+        to={`${base}/Modules`}
+        className={linkClass}
+        id="wd-course-modules-link"
+      >
         Modules
-      </Link>
-      <br />
-      <Link to="/Kambaz/Courses/1234/Piazza" id="wd-course-piazza-link">
+      </NavLink>
+      <NavLink
+        to={`${base}/Piazza`}
+        className={linkClass}
+        id="wd-course-piazza-link"
+      >
         Piazza
-      </Link>
-      <br />
-      <Link to="/Kambaz/Courses/1234/Zoom" id="wd-course-zoom-link">
+      </NavLink>
+      <NavLink
+        to={`${base}/Zoom`}
+        className={linkClass}
+        id="wd-course-zoom-link"
+      >
         Zoom
-      </Link>
-      <br />
-      <Link to="/Kambaz/Courses/1234/Assignments" id="wd-course-quizzes-link">
+      </NavLink>
+      <NavLink
+        to={`${base}/Assignments`}
+        className={linkClass}
+        id="wd-course-assignments-link"
+      >
         Assignments
-      </Link>
-      <br />
-      <Link to="/Kambaz/Courses/1234/Quizzes" id="wd-course-assignments-link">
+      </NavLink>
+      <NavLink
+        to={`${base}/Quizzes`}
+        className={linkClass}
+        id="wd-course-quizzes-link"
+      >
         Quizzes
-      </Link>
-      <br />
-      <Link to="/Kambaz/Courses/1234/Grades" id="wd-course-grades-link">
+      </NavLink>
+      <NavLink
+        to={`${base}/Grades`}
+        className={linkClass}
+        id="wd-course-grades-link"
+      >
         Grades
-      </Link>
-      <br />
-      <Link to="/Kambaz/Courses/1234/People" id="wd-course-people-link">
+      </NavLink>
+      <NavLink
+        to={`${base}/People`}
+        className={linkClass}
+        id="wd-course-people-link"
+      >
         People
-      </Link>
-      <br />
+      </NavLink>
     </div>
   );
 }
