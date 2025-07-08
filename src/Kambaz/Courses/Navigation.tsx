@@ -1,68 +1,80 @@
-import { NavLink, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 export default function CourseNavigation() {
-  const { cid } = useParams<{ cid: string }>();
-  const base = `/Kambaz/Courses/${cid}`;
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "fw-bold text-danger" : "text-primary";
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
-    <div id="wd-courses-navigation" className="d-flex flex-column">
-      <NavLink
-        to={`${base}/Home`}
-        className={linkClass}
+    <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
+      <Link
+        to="/Kambaz/Courses/1234/Home"
         id="wd-course-home-link"
+        className={`list-group-item border border-0 ${
+          currentPath.includes("/Home") ? "active" : "text-danger"
+        }`}
       >
-        Home
-      </NavLink>
-      <NavLink
-        to={`${base}/Modules`}
-        className={linkClass}
+        {" "}
+        Home{" "}
+      </Link>
+      <Link
+        to="/Kambaz/Courses/1234/Modules"
         id="wd-course-modules-link"
+        className={`list-group-item border border-0 ${
+          currentPath.includes("/Modules") ? "active" : "text-danger"
+        }`}
       >
-        Modules
-      </NavLink>
-      <NavLink
-        to={`${base}/Piazza`}
-        className={linkClass}
+        {" "}
+        Modules{" "}
+      </Link>
+      <Link
+        to="/Kambaz/Courses/1234/Piazza"
         id="wd-course-piazza-link"
+        className={`list-group-item border border-0 ${
+          currentPath.includes("/Piazza") ? "active" : "text-danger"
+        }`}
       >
-        Piazza
-      </NavLink>
-      <NavLink
-        to={`${base}/Zoom`}
-        className={linkClass}
+        {" "}
+        Piazza{" "}
+      </Link>
+      <Link
+        to="/Kambaz/Courses/1234/Zoom"
         id="wd-course-zoom-link"
+        className={`list-group-item border border-0 ${
+          currentPath.includes("/Zoom") ? "active" : "text-danger"
+        }`}
       >
-        Zoom
-      </NavLink>
-      <NavLink
-        to={`${base}/Assignments`}
-        className={linkClass}
-        id="wd-course-assignments-link"
-      >
-        Assignments
-      </NavLink>
-      <NavLink
-        to={`${base}/Quizzes`}
-        className={linkClass}
+        {" "}
+        Zoom{" "}
+      </Link>
+      <Link
+        to="/Kambaz/Courses/1234/Assignments"
         id="wd-course-quizzes-link"
+        className={`list-group-item border border-0 ${
+          currentPath.includes("/Assignments") ? "active" : "text-danger"
+        }`}
       >
-        Quizzes
-      </NavLink>
-      <NavLink
-        to={`${base}/Grades`}
-        className={linkClass}
-        id="wd-course-grades-link"
+        {" "}
+        Assignments{" "}
+      </Link>
+      <Link
+        to="/Kambaz/Courses/1234/Quizzes"
+        id="wd-course-assignments-link"
+        className={`list-group-item border border-0 ${
+          currentPath.includes("/Quizzes") ? "active" : "text-danger"
+        }`}
       >
-        Grades
-      </NavLink>
-      <NavLink
-        to={`${base}/People`}
-        className={linkClass}
+        {" "}
+        Quizzes{" "}
+      </Link>
+      <Link
+        to="/Kambaz/Courses/1234/People"
         id="wd-course-people-link"
+        className={`list-group-item border border-0 ${
+          currentPath.includes("/People") ? "active" : "text-danger"
+        }`}
       >
-        People
-      </NavLink>
+        {" "}
+        People{" "}
+      </Link>
     </div>
   );
 }

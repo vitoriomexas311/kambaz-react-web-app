@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+body * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 768px) {
+  #wd-kambaz .wd-main-content-offset {
+    padding-left: 140px !important;
+  }
+}
+.list-group.wd > .list-group-item.active {
+  color: black;
+  background-color: white;
+  border-left: 3px solid black !important;
+}
+
+#wd-modules {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#wd-modules > .wd-module {
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  background-color: #f8f9fa; /* light gray similar to canvas kinda*/
+}
+
+#wd-modules .wd-module > .wd-title {
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #ececec;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+#wd-modules .wd-lessons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#wd-modules .wd-lesson {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+#wd-modules .wd-lesson:last-child {
+  border-bottom: none;
+}
+
+#wd-modules .wd-lesson > .wd-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6c757d; /* secondary text */
+}
+
+#wd-modules .wd-content {
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+#wd-modules .wd-content-item {
+  padding: 4px 0;
+  font-size: 0.9rem;
+}
+
+#wd-modules .wd-content-item:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (min-width: 992px) {
+  #wd-modules > .wd-module {
+    margin-bottom: 32px;
+  }
+}

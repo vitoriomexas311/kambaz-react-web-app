@@ -1,13 +1,18 @@
+import { FaCaretDown } from "react-icons/fa";
+
 export default function Modules() {
   return (
     <div>
-      {/* Implement Collapse All button, View Progress button, etc. */}
       <ul id="wd-modules">
         <li className="wd-module">
-          <div className="wd-title">Week 1</div>
+          <div className="wd-title d-flex align-items-center">
+            <FaCaretDown className="me-2" /> Week 1
+          </div>
           <ul className="wd-lessons">
             <li className="wd-lesson">
-              <span className="wd-title">LEARNING OBJECTIVES</span>
+              <span className="wd-title d-flex align-items-center">
+                <FaCaretDown className="me-2" /> LEARNING OBJECTIVES
+              </span>
               <ul className="wd-content">
                 <li className="wd-content-item">Introduction to the course</li>
                 <li className="wd-content-item">
@@ -18,10 +23,14 @@ export default function Modules() {
           </ul>
         </li>
         <li className="wd-module">
-          <div className="wd-title">Week 2</div>
+          <div className="wd-title d-flex align-items-center">
+            <FaCaretDown className="me-2" /> Week 2
+          </div>
           <ul className="wd-lessons">
             <li className="wd-lesson">
-              <span className="wd-title">LEARNING OBJECTIVES</span>
+              <span className="wd-title d-flex align-items-center">
+                <FaCaretDown className="me-2" /> LEARNING OBJECTIVES
+              </span>
               <ul className="wd-content">
                 <li className="wd-content-item">HTML Basics</li>
                 <li className="wd-content-item">CSS Fundamentals</li>
@@ -31,10 +40,14 @@ export default function Modules() {
           </ul>
         </li>
         <li className="wd-module">
-          <div className="wd-title">Week 3</div>
+          <div className="wd-title d-flex align-items-center">
+            <FaCaretDown className="me-2" /> Week 3
+          </div>
           <ul className="wd-lessons">
             <li className="wd-lesson">
-              <span className="wd-title">LEARNING OBJECTIVES</span>
+              <span className="wd-title d-flex align-items-center">
+                <FaCaretDown className="me-2" /> LEARNING OBJECTIVES
+              </span>
               <ul className="wd-content">
                 <li className="wd-content-item">js Intro!</li>
                 <li className="wd-content-item">DOM Manipulation</li>
