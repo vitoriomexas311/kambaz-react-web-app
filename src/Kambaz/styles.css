@@ -79,3 +79,36 @@ body * {
     margin-bottom: 32px;
   }
 }
+
+#wd-modules-controls .btn {
+  font-size: 0.875rem;
+  padding: 4px 12px;
+}
+
+#wd-modules-controls .dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.btn-secondary {
+  --bs-btn-color: #000 !important;
+  --bs-btn-bg: #c7cdd1 !important;
+  --bs-btn-border-color: #c7cdd1 !important;
+  --bs-btn-hover-color: #fff !important;
+}
+
+.bg-secondary {
+  --bs-secondary-rgb: 199, 205, 209;
+}
+
+.list-group-item {
+  --bs-list-group-border-color: gray;
+}
+
+.border-gray {
+  border: 1px solid gray !important;
+}
+
+.wd-lesson {
+  border-left: 3px solid green !important;
+}
