@@ -1,129 +1,106 @@
+import { Form, Row, Col, Button } from "react-bootstrap";
+
 export default function AssignmentEditor() {
   return (
-    <div id="wd-assignments-editor">
-      <label htmlFor="wd-name">
-        <strong>Assignment Name</strong>
-      </label>
-      <br />
-      <input id="wd-name" value="A1 - ENV + HTML" />
-      <br />
-      <br />
+    <div id="wd-assignments-editor" className="p-3">
+      <h3 className="mb-4">Edit Assignment</h3>
 
-      <label htmlFor="wd-group">
-        <strong>Assignment Group</strong>
-      </label>
-      <br />
-      <select id="wd-group">
-        <option value="assignments">Assignments</option>
-        <option value="quizzes">Quizzes</option>
-        <option value="exams">Exams</option>
-        <option value="projects">Final Projects</option>
-      </select>
-      <br />
-      <br />
+      <Form>
+        <Form.Group controlId="wd-name" className="mb-3">
+          <Form.Label className="fw-bold">Assignment Name</Form.Label>
+          <Form.Control type="text" defaultValue="A1 - ENV + HTML" />
+        </Form.Group>
+        <Form.Group controlId="wd-description" className="mb-4">
+          <Form.Label className="fw-bold">Description</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={8}
+            defaultValue="The assignment is available online so you submit a link to the landing page of"
+          />
+        </Form.Group>
 
-      <label htmlFor="wd-display-grade-as">
-        <strong>Display Grade as</strong>
-      </label>
-      <br />
-      <select id="wd-display-grade-as">
-        <option value="points">Points</option>
-        <option value="percentage">Percentage</option>
-        <option value="letter-grade">Letter grade</option>
-        <option value="complete-incomplete">pass/fail</option>
-      </select>
-      <br />
-      <br />
+        <Row className="mb-3 align-items-center">
+          <Form.Label column sm={3} className="fw-bold text-sm-end">
+            Points
+          </Form.Label>
+          <Col sm={9}>
+            <Form.Control type="number" defaultValue={100} min={0} />
+          </Col>
+        </Row>
 
-      <label htmlFor="wd-submission-type">
-        <strong>Submission Type</strong>
-      </label>
-      <br />
-      <select id="wd-submission-type">
-        <option value="online">Online</option>
-        <option value="in-person">In person</option>
-        <option value="external-tool">External Tool</option>
-        <option value="no-submission">No submision needed!</option>
-      </select>
-      <br />
-      <br />
+        <Form.Group controlId="wd-group" className="mb-3">
+          <Form.Label className="fw-bold">Assignment Group</Form.Label>
+          <Form.Select defaultValue="assignments">
+            <option value="assignments">Assignments</option>
+            <option value="quizzes">Quizzes</option>
+            <option value="exams">Exams</option>
+            <option value="projects">Final Projects</option>
+          </Form.Select>
+        </Form.Group>
 
-      <div id="wd-online-options" style={{ display: "block" }}>
-        <label>
-          <strong>Online Entry Options</strong>
-        </label>
-        <br />
-        <input type="checkbox" id="wd-text-entry" />
-        <label htmlFor="wd-text-entry">Text Entry</label>
-        <br />
-        <input type="checkbox" id="wd-media-recordings" />
-        <label htmlFor="wd-media-recordings">Media Upload</label>
-        <br />
-        <input type="checkbox" id="wd-file-upload" />
-        <label htmlFor="wd-file-upload">File Upload</label>
-        <br />
-        <input type="checkbox" id="wd-website-url" />
-        <label htmlFor="wd-website-url">Website URL</label>
-        <br />
-        <br />
-      </div>
+        <Form.Group controlId="wd-display-grade-as" className="mb-3">
+          <Form.Label className="fw-bold">Display Grade as</Form.Label>
+          <Form.Select defaultValue="points">
+            <option value="points">Points</option>
+            <option value="percentage">Percentage</option>
+            <option value="letter-grade">Letter grade</option>
+            <option value="complete-incomplete">Pass / Fail</option>
+          </Form.Select>
+        </Form.Group>
 
-      <label htmlFor="wd-assign-to">
-        <strong>Assign to</strong>
-      </label>
-      <br />
-      <select id="wd-assign-to">
-        <option value="everyone">Everyone</option>
-        <option value="sections">Sections</option>
-        <option value="individuals">Individuals</option>
-      </select>
-      <br />
-      <br />
+        <div className="border p-3 mb-3">
+          <Form.Group controlId="wd-submission-type" className="mb-3">
+            <Form.Label className="fw-bold">Submission Type</Form.Label>
+            <Form.Select defaultValue="online">
+              <option value="online">Online</option>
+              <option value="in-person">In Person</option>
+              <option value="external-tool">External Tool</option>
+              <option value="no-submission">No Submission</option>
+            </Form.Select>
+          </Form.Group>
 
-      <label htmlFor="wd-due-date">
-        <strong>Due Date</strong>
-      </label>
-      <br />
-      <input type="datetime-local" id="wd-due-date" />
-      <br />
-      <br />
+          <Form.Group className="mb-0">
+            <Form.Label className="fw-bold">Online Entry Options</Form.Label>
+            <div className="ms-2">
+              <Form.Check label="Text Entry" id="wd-text-entry" />
+              <Form.Check label="Media Upload" id="wd-media-recordings" />
+              <Form.Check label="File Upload" id="wd-file-upload" />
+              <Form.Check label="Website URL" id="wd-website-url" />
+            </div>
+          </Form.Group>
+        </div>
 
-      <label htmlFor="wd-available-from">
-        <strong>Available From</strong>
-      </label>
-      <br />
-      <input type="datetime-local" id="wd-available-from" />
-      <br />
-      <br />
+        <div className="border p-3 mb-3">
+          <Form.Group controlId="wd-assign-to" className="mb-3">
+            <Form.Label className="fw-bold">Assign to</Form.Label>
+            <Form.Select defaultValue="everyone">
+              <option value="everyone">Everyone</option>
+              <option value="sections">Sections</option>
+              <option value="individuals">Individuals</option>
+            </Form.Select>
+          </Form.Group>
 
-      <label htmlFor="wd-available-until">
-        <strong>Available Until</strong>
-      </label>
-      <br />
-      <input type="datetime-local" id="wd-available-until" />
-      <br />
-      <br />
+          <Row className="mb-3">
+            <Col md={4} className="mb-3 mb-md-0">
+              <Form.Label className="fw-bold">Due Date</Form.Label>
+              <Form.Control type="datetime-local" />
+            </Col>
+            <Col md={4} className="mb-3 mb-md-0">
+              <Form.Label className="fw-bold">Available From</Form.Label>
+              <Form.Control type="datetime-local" />
+            </Col>
+            <Col md={4}>
+              <Form.Label className="fw-bold">Available Until</Form.Label>
+              <Form.Control type="datetime-local" />
+            </Col>
+          </Row>
+        </div>
 
-      <textarea
-        id="wd-description"
-        rows={8}
-        cols={80}
-        style={{ resize: "vertical", minHeight: "200px" }}
-      >
-        The assignment is available online so you submit a link to the landing
-        page of
-      </textarea>
-      <br />
-      <table>
-        <tr>
-          <td align="right" valign="top">
-            <label htmlFor="wd-points">Points</label>
-          </td>
-          <td>
-            <input id="wd-points" value={100} />
-          </td>
-        </tr>
-      </table>
+        <div className="d-flex gap-2">
+          <Button variant="danger">Save</Button>
+          <Button variant="secondary">Cancel</Button>
+        </div>
+      </Form>
     </div>
   );
 }
