@@ -15,6 +15,12 @@ export default function Kambaz() {
         <div className="wd-main-content-offset p-3">
           <div id="my-name-and-section">
             <h1> Vitorio Mexas </h1>
+            <a
+              id="wd-github"
+              href="https://github.com/vitoriomexas311/kambaz-react-web-app"
+            >
+              GitHub Repository
+            </a>
             <h2> CS 5610 Summer 2 | 7PM EST Tuesdays & Thursdays </h2>
           </div>
           <Routes>
