@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Form, Row, Col, Button, Card } from "react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
 
 export default function Profile() {
